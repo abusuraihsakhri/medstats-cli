@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "medstats-cli"
+version = "0.1.0"
+description = "Diagnostic accuracy metrics from a 2×2 contingency table — with plain-English clinical interpretations."
+authors = [{ name = "Dr. Abu Suraih Sakhri" }]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.10"
+keywords = ["medicine", "statistics", "diagnostics", "EBM", "clinical", "sensitivity", "specificity"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Healthcare Industry",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+]
+
+dependencies = [
+    "typer>=0.12",
+    "rich>=13",
+]
+
+[project.scripts]
+medstats = "medstats.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/your-username/medstats-cli"
+Issues   = "https://github.com/your-username/medstats-cli/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["medstats*"]
